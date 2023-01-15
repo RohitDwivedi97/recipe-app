@@ -17,8 +17,8 @@ class MealDetailScreen extends StatelessWidget {
     return Container(
         height: 180,
         width: double.infinity,
-        margin: EdgeInsets.all(20),
-        padding: EdgeInsets.all(10),
+        margin: const EdgeInsets.all(20),
+        padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
           color: Colors.white,
           border: Border.all(color: Colors.grey),
@@ -33,7 +33,7 @@ class MealDetailScreen extends StatelessWidget {
     final selectedMeal = DUMMY_MEALS.firstWhere((meal) => meal.id == mealId);
     return Scaffold(
       appBar: AppBar(
-        title: Text('${selectedMeal.title}'),
+        title: Text('$selectedMeal.title'),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -41,7 +41,7 @@ class MealDetailScreen extends StatelessWidget {
             Container(
               height: 300,
               width: double.infinity,
-              padding: EdgeInsets.all(6),
+              padding: const EdgeInsets.all(6),
               child: Image.network(
                 selectedMeal.imageUrl,
                 height: 200,
@@ -53,11 +53,11 @@ class MealDetailScreen extends StatelessWidget {
               ListView.builder(
                   itemBuilder: (ctx, index) {
                     return Card(
+                      color: Theme.of(context).accentColor,
                       child: Padding(
                         child: Text('${selectedMeal.ingredients[index]}'),
                         padding: const EdgeInsets.all(8.0),
                       ),
-                      color: Theme.of(context).accentColor,
                     );
                   },
                   itemCount: selectedMeal.ingredients.length),
