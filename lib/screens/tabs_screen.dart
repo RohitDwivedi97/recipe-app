@@ -31,12 +31,18 @@ class _TabsScreenState extends State<TabsScreen> {
       body: _pages[_selectedPageIndex],
       bottomNavigationBar: BottomNavigationBar(
         onTap: _selectPage,
-        items: const [
+        currentIndex: _selectedPageIndex,
+        selectedItemColor: Colors.amber,
+        type: BottomNavigationBarType.shifting,
+        selectedFontSize: 16,
+        items: [
           BottomNavigationBarItem(
+            backgroundColor: Theme.of(context).primaryColor,
             icon: Icon(Icons.category),
             label: 'Categories',
           ),
           BottomNavigationBarItem(
+            backgroundColor: Theme.of(context).primaryColor,
             icon: Icon(Icons.star),
             label: 'Favourites',
           )
