@@ -122,7 +122,7 @@ class MealItem extends StatelessWidget {
                     const SizedBox(
                       width: 6,
                     ),
-                    Text(complexityText)
+                    Text(affordabilityText)
                   ],
                 ),
               ],
